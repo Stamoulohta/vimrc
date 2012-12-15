@@ -29,6 +29,7 @@ set nu
 set tags+=/home/george/.vim/ctags'
 set wildmenu
 
+filetype plugin on
 syntax on
 "colorscheme default
 
