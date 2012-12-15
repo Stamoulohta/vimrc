@@ -1,0 +1,1 @@
+set stabstop=2

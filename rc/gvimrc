@@ -1,0 +1,39 @@
+function! SuperCleverTab()
+    if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+        return "\<Tab>"
+    else
+        if &omnifunc != ''
+            return "\<C-X>\<C-O>"
+        elseif &dictionary != ''
+            return "\<C-K>"
+        else
+            return "\<C-N>"
+        endif
+    endif
+endfunction
+
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+map <C-F7> :! easytags.sh *<CR>
+
+set tabstop=4
+set sw=4
+set mouse=a
+set mousehide
+set bg=dark
+set expandtab
+set cindent
+set nu
+set tags+=/home/george/.vim/ctags'
+set wildmenu
+
+syntax on
+"colorscheme default
+
+if &term=~'xterm'
+    "has(gui_running)
+    hi Normal ctermbg=black ctermfg=grey cterm=none
+elseif &term=~'linux'
+    colorscheme default
+endif
+
