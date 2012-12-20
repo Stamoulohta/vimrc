@@ -28,15 +28,13 @@ set cindent
 set nu
 set tags+=/home/george/.vim/ctags'
 set wildmenu
+set autochdir
 
 filetype plugin on
 syntax on
-"colorscheme default
 
-if &term=~'xterm'
-    "has(gui_running)
-    hi Normal ctermbg=black ctermfg=grey cterm=none
-elseif &term=~'linux'
+if has("gui_running")
+    colorscheme torte
+else
     colorscheme default
 endif
-
