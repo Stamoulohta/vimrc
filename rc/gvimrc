@@ -20,23 +20,28 @@ map <C-F7> :! easytags.sh *<CR>
 
 set tabstop=4
 set sw=4
+set nowrap
 set mouse=a
 set mousehide
 set bg=dark
 set expandtab
 set cindent
-set nu
+set rnu
 set tags+=/home/george/.vim/ctags'
 set wildmenu
+set list listchars=tab:»─,trail:·,precedes:←,extends:→
+
+autocmd InsertEnter * : set number
+autocmd InsertLeave * : set relativenumber
+autocmd FocusLost   * : set number
+autocmd FocusGained * : set relativenumber
 
 filetype plugin on
 syntax on
-"colorscheme default
 
-if &term=~'xterm'
-    "has(gui_running)
-    hi Normal ctermbg=black ctermfg=grey cterm=none
-elseif &term=~'linux'
+if has("gui_running")
+    colorscheme torte
+else
     colorscheme default
 endif
 
