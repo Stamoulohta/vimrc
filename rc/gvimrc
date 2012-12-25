@@ -18,6 +18,7 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 map <C-F7> :! easytags.sh *<CR>
 
+set autochdir
 set tabstop=4
 set sw=4
 set nowrap
@@ -44,4 +45,3 @@ if has("gui_running")
 else
     colorscheme default
 endif
-
