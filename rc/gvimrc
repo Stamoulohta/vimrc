@@ -18,7 +18,7 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 map <C-F7> :! easytags.sh *<CR>
 
-set autochdir
+set nocompatible
 set tabstop=4
 set sw=4
 set nowrap
@@ -32,12 +32,13 @@ set tags+=/home/george/.vim/ctags'
 set wildmenu
 set list listchars=tab:»─,trail:·,precedes:←,extends:→
 
+autocmd BufEnter    *   silent! lcd %:p:h
 autocmd InsertEnter * : set number
 autocmd InsertLeave * : set relativenumber
 autocmd FocusLost   * : set number
 autocmd FocusGained * : set relativenumber
 
-filetype plugin on
+filetype plugin indent on
 syntax on
 
 if has("gui_running")
