@@ -1,36 +1,23 @@
+" My gvimrc.
+"
+" Maintainer:		George Stamoulis <g.a.stamoulis@gmail.com>
+" Last Change:		January 06 2013
+"
 call pathogen#infect()
 
-function! SuperCleverTab()
-    if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-        return "\<Tab>"
-    else
-        if &omnifunc != ''
-            return "\<C-X>\<C-O>"
-        elseif &dictionary != ''
-            return "\<C-K>"
-        else
-            return "\<C-N>"
-        endif
-    endif
-endfunction
-
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
-
-map <C-F7> :! easytags.sh *<CR>
-
-set autochdir
+set nocompatible
 set tabstop=4
-set sw=4
-set nowrap
+set softtabstop=4
+set shiftwidth=4
+set background=dark
+set relativenumber
+set wildmenu
 set mouse=a
 set mousehide
-set bg=dark
-set expandtab
-set cindent
-set rnu
-set tags+=/home/george/.vim/ctags'
-set wildmenu
+set nowrap
 set list listchars=tab:»─,trail:·,precedes:←,extends:→
+
+autocmd BufEnter    *   silent! lcd %:p:h
 
 autocmd InsertEnter * : set number
 autocmd InsertLeave * : set relativenumber
