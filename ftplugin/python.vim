@@ -5,16 +5,16 @@
 
 if exists("b:did_ftplugin") | finish | endif
 let b:did_ftplugin = 1
-let s:keepcpo= &cpo
-set cpo&vim
 
 setlocal cinkeys-=0#
 setlocal indentkeys-=0#
-setlocal include=\s*\\(from\\\|import\\)
+setlocal include=^\\s*\\(from\\\|import\\)
 setlocal includeexpr=substitute(v:fname,'\\.','/','g')
 setlocal suffixesadd=.py
 setlocal comments-=:%
 setlocal commentstring=#%s
+
+setlocal keywordprg=pydoc
 
 setlocal omnifunc=pythoncomplete#Complete
 
@@ -49,6 +49,3 @@ if has("gui_win32") && !exists("b:browsefilter")
     let b:browsefilter = "Python Files (*.py)\t*.py\n" .
 		       \ "All Files (*.*)\t*.*\n"
 endif
-
-let &cpo = s:keepcpo
-unlet s:keepcpo

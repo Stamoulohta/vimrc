@@ -24,7 +24,7 @@ autocmd InsertLeave * : set relativenumber
 autocmd FocusLost   * : set number
 autocmd FocusGained * : set relativenumber
 
-filetype plugin on
+filetype plugin indent on
 syntax on
 
 if &term=~'xterm'

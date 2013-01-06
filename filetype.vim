@@ -11,5 +11,5 @@ if exists("did_load_filetypes")
 endif
 
 augroup filetypedetect
-	au! BufNewFile,BufRead *.py,*.pyw setfiletype python45
+	au! BufNewFile,BufRead *.py,*.pyw setfiletype python
 augroup END
