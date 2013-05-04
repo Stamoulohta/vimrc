@@ -7,9 +7,9 @@ Create Symlinks:
 ================
 
     ln -s ~/.vim/rc/vimrc ~/.vimrc
-    
-    n -s ~/.vim/rc/gvimrc ~/.gvimrc
-    
+
+    ln -s ~/.vim/rc/gvimrc ~/.gvimrc
+
 Fetch Submodules:
 =================
 
