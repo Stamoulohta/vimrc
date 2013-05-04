@@ -2,30 +2,46 @@
 "
 " Maintainer:		George Stamoulis <g.a.stamoulis@gmail.com>
 " Last Change:		January 06 2013
-"
-call pathogen#infect()
 
-set nocompatible
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set background=dark
-set relativenumber
-set wildmenu
-set mouse=a
-set mousehide
-set nowrap
+" The plugins plugin.
+execute pathogen#infect()
+
+set nocompatible				" get rid of Vi compatibility mode.
+filetype plugin indent on		" filetype detection[ON] plugin[ON] indent[ON].
+filetype indent on				" activates indenting for files.
+syntax enable					" enable syntax gighlighting (previously syntax on).
+set autoindent					" auto-indent.
+set tabstop=4					" tab spacing.
+set softtabstop=4				" unify.
+set shiftwidth=4				" indent/outdent by 4 columns.
+set shiftround					" always indent/outdent to the nearest tabstop.
+set expandtab					" use spaces instead of tabs.
+set smarttab					" use tabs at the start of a line, spaces elsewhere.
+set nohlsearch					" don't continue to highlight searched phrases.
+set incsearch					" but do hihglight as you type your search.
+set ruler						" always show info along bottom.
+set background=dark				" colorscheme info.
+set relativenumber				" count distance from cursor.
+set wildmenu					" enable wildmenu.
+set mouse=a						" enable mouse.
+set mousehide					" hide mouse when typing.
+set nowrap						" don't wrap text.
+								" GUI
+set guifont=Inconsolata\ 12		" editor fonts.
+set guioptions-=m				" remove menubar.
+set guioptions-=T				" remove toolbar.
+set guioptions-=r				" remove right-hand scroll bar.
+
 set list listchars=tab:»─,trail:·,precedes:←,extends:→
 
 autocmd BufEnter    *   silent! lcd %:p:h
 
 autocmd InsertEnter * : set number
 autocmd InsertLeave * : set relativenumber
+autocmd InsertEnter * : imap <LeftMouse> <nop>
+autocmd InsertLeave * : imap <LeftMouse> <LeftMouse>
 autocmd FocusLost   * : set number
 autocmd FocusGained * : set relativenumber
-
-filetype plugin indent on
-syntax on
 
 if has("gui_running")
     colorscheme torte
