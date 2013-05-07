@@ -23,8 +23,6 @@ set ruler						" always show info along bottom.
 set background=dark				" colorscheme info.
 set relativenumber				" count distance from cursor.
 set wildmenu					" enable wildmenu.
-set mouse=a						" enable mouse.
-set mousehide					" hide mouse when typing.
 set nowrap						" don't wrap text.
 set list listchars=tab:»─,trail:·,precedes:←,extends:→
 
@@ -34,6 +32,12 @@ autocmd InsertEnter * : set number
 autocmd InsertLeave * : set relativenumber
 autocmd FocusLost   * : set number
 autocmd FocusGained * : set relativenumber
+
+" The Vim way =)
+map <up>		<nop>
+map <down>		<nop>
+map <left>		<nop>
+map <right>		<nop>
 
 if &term=~'xterm'
     hi Normal ctermbg=black ctermfg=grey cterm=none

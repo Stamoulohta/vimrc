@@ -1,0 +1,2 @@
+To add a new plugin:
+$ git submodule add https://git.url/repo/module.git bundle/module
