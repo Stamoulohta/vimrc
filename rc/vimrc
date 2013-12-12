@@ -1,15 +1,15 @@
 " My vimrc.
 "
 " Maintainer:		George Stamoulis <g.a.stamoulis@gmail.com>
-" Last Change:		January 06 2013
-"
+" Last Change:		May 08 2013
+
 " The plugins plugin.
 execute pathogen#infect()
 
 set nocompatible				" get rid of Vi compatibility mode.
 filetype plugin indent on		" filetype detection[ON] plugin[ON] indent[ON].
 filetype indent on				" activates indenting for files.
-syntax enable					" enable syntax gighlighting (previously syntax on).
+syntax enable					" enable syntax highlighting (previously syntax on).
 set autoindent					" auto-indent.
 set tabstop=4					" tab spacing.
 set softtabstop=4				" unify.
@@ -24,6 +24,7 @@ set background=dark				" colorscheme info.
 set relativenumber				" count distance from cursor.
 set wildmenu					" enable wildmenu.
 set nowrap						" don't wrap text.
+set colorcolumn=120				" highlight the 120th column.
 set list listchars=tab:»─,trail:·,precedes:←,extends:→
 
 autocmd BufEnter    *   silent! lcd %:p:h
@@ -38,6 +39,9 @@ map <up>		<nop>
 map <down>		<nop>
 map <left>		<nop>
 map <right>		<nop>
+
+" Snipmate variables.
+source $HOME/.vim/variables/snipvars.vim
 
 if &term=~'xterm'
     hi Normal ctermbg=black ctermfg=grey cterm=none
