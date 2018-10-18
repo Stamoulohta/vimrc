@@ -9,6 +9,7 @@ execute pathogen#infect()
 set nocompatible				" get rid of Vi compatibility mode.
 filetype plugin indent on		" filetype detection[ON] plugin[ON] indent[ON].
 syntax enable					" enable syntax highlighting (previously syntax on).
+set directory=.,~/.vim/swap		" swap file directory.
 set autoindent					" auto-indent.
 set tabstop=4					" tab spacing.
 set softtabstop=4				" unify.
