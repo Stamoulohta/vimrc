@@ -8,7 +8,7 @@ source $HOME/.vimrc
 
 set mouse=v						" enable mouse only in visual mode.
 set mousehide					" hide mouse when typing.
-set guifont=Inconsolata-g\ 10	" editor fonts.
+set guifont=Inconsolata\ 10		" editor fonts.
 set guioptions-=m				" remove menubar.
 set guioptions-=T				" remove toolbar.
 set guioptions-=r				" remove right-hand scroll bar.
